@@ -1,28 +1,21 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { Header } from "./components/Header";
+import Footer from "./components/Footer";
+import { Content } from "./components/Content";
 
 function App() {
-  //js
-  var name = "royal";
-  var year = 2021;
-  var isActive = false;
-  var data ={
-    name: "Ahmedabad",
-    pincode: 380001
-  }
-  console.log(data);   
 
+  var title = "React App";
+  var payload = "This is a payload";
   return (
-    <>
-      <div className="App">
-        <h1>Name = {name}</h1>
-        <h2>Year = {year}</h2>
-        <h3>Active ? {isActive == true ? "YES" : "NO"}</h3>
-        <h3>city = {data.name}</h3>
-        <h3>pincode = {data.pincode}</h3>
-        <p>{data.pincode}</p>
-      </div>
-    </>
+    <div className="App">
+      <Header  title ={title}/>
+
+      <Content  payload ={payload}/>
+
+      <Footer />
+    </div>
   );
 }
 
