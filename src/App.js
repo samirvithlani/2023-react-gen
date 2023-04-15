@@ -3,6 +3,7 @@ import "./App.css";
 import { Header } from "./components/Header";
 import Footer from "./components/Footer";
 import { Content } from "./components/Content";
+import { Users } from "./users/Users";
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
     <div className="App">
       <Header  title ={title}/>
 
-      <Content  payload ={payload}/>
+      {/* <Content  payload ={payload}/> */}
+      <Users/>
 
       <Footer />
     </div>
