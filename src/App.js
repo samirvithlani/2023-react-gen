@@ -12,11 +12,12 @@ function App() {
   return (
     <div className="App">
       <Header  title ={title}/>
+      <br/>
 
       {/* <Content  payload ={payload}/> */}
       <Users/>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
