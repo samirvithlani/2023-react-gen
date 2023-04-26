@@ -4,6 +4,8 @@ import { Header } from "./components/Header";
 import Footer from "./components/Footer";
 import { Content } from "./components/Content";
 import { Users } from "./users/Users";
+import { Registration } from "./forms/Registration";
+import { StudentReg } from "./forms/StudentReg";
 
 function App() {
 
@@ -15,7 +17,9 @@ function App() {
       <br/>
 
       {/* <Content  payload ={payload}/> */}
-      <Users/>
+      {/* <Users/> */}
+      {/* <Registration/> */}
+      <StudentReg/>
 
       {/* <Footer /> */}
     </div>

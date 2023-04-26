@@ -7,13 +7,14 @@ export const AddUser = (props) => {
   const [gender, setgender] = useState("");
 
   const nameHandler = (e) => {
+    console.log(e)
     console.log(e.target.value);
     setname(e.target.value);
   };
 
   const submitData = (e) => {
     e.preventDefault();
-    
+
     var userData = {
       name: name,
       age: age,
