@@ -6,6 +6,13 @@ import { Content } from "./components/Content";
 import { Users } from "./users/Users";
 import { Registration } from "./forms/Registration";
 import { StudentReg } from "./forms/StudentReg";
+import { Route, Routes } from "react-router-dom";
+import { Employees } from "./components/employee/Employees";
+import { AboutUs } from "./components/employee/AboutUs";
+import { Navbar } from "./components/Navbar";
+import { Home } from "./components/employee/Home";
+import { Error } from "./components/employee/Error";
+import { ContactUs } from "./components/employee/ContactUs";
 
 function App() {
 
@@ -13,13 +20,28 @@ function App() {
   var payload = "This is a payload";
   return (
     <div className="App">
-      <Header  title ={title}/>
+      <Navbar/>
       <br/>
+      <Routes>
+        <Route path="/" element = {<Home/>}></Route>
+        <Route path="/employees" element={<Employees/>}></Route>
+        <Route path="/aboutus" element = {<AboutUs/>}></Route>
+        <Route path ="/*" element={<Error/>}></Route>
+        {/* <Route path ="/employees/contactus" element={<ContactUs/>}></Route> */}
+        <Route path ="/employees/contactus/:id" element={<ContactUs/>}></Route>
+      </Routes>
+
+
+
+
+
+
+
 
       {/* <Content  payload ={payload}/> */}
       {/* <Users/> */}
       {/* <Registration/> */}
-      <StudentReg/>
+      
 
       {/* <Footer /> */}
     </div>
