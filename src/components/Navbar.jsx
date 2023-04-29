@@ -23,13 +23,18 @@ export const Navbar = () => {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <Link class="nav-link" to="/employees">
+              <Link class="nav-link" to="/employees" state={{data:"hello this is from state 1"}}>
                 employees
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/aboutus">
                 ABOUT US
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/store">
+                STORE
               </Link>
             </li>
             <li class="nav-item dropdown">

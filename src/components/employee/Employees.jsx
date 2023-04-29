@@ -1,7 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export const Employees = () => {
+    
+    const location = useLocation()
+
+    
+    
     var employees = [
         {
             id: 1,
@@ -18,12 +23,15 @@ export const Employees = () => {
     <div>
         <h1>Employees</h1>
         {/* <Link to="contactus/vihang">contactus</Link> */}
+        {
+            location?.state?.data
+        }
         <ul>
             {
-                employees.map((employee)=>{
+                employees.map((employee,key)=>{
                     return(
                         <li>
-                            <Link to = {`contactus/${employee.id}`}>{employee.name}</Link>
+                            <Link to = {`contactus/${employee.id}`}>{employee.id}</Link>
                         </li>
                     )
                 })
