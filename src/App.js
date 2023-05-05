@@ -15,6 +15,8 @@ import { Error } from "./components/employee/Error";
 import { ContactUs } from "./components/employee/ContactUs";
 import { StorageDemo } from "./storage/StorageDemo";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import { ApiDemo1 } from "./api/ApiDemo1";
+import { ApiDemo2 } from "./api/ApiDemo2";
 
 function App() {
   var title = "React App";
@@ -33,6 +35,8 @@ function App() {
 
         <Route path="/*" element={<Error />}></Route>
         <Route path="/store" element={<StorageDemo />}></Route>
+        <Route path="/apidemo1" element ={<ApiDemo1/>}></Route>
+        <Route path="/apidemo2" element ={<ApiDemo2/>}></Route>
         {/* <Route path ="/employees/contactus" element={<ContactUs/>}></Route> */}
         <Route path="/employees/contactus/:id" element={<ContactUs />}></Route>
       </Routes>
