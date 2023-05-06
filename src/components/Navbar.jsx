@@ -47,6 +47,11 @@ export const Navbar = () => {
                 API DEMO 2
               </Link>
             </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/listuser">
+                LIST USER
+              </Link>
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
