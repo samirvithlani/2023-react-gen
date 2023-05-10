@@ -19,6 +19,7 @@ import { ApiDemo1 } from "./api/ApiDemo1";
 import { ApiDemo2 } from "./api/ApiDemo2";
 import { ListUser } from "./api/ListUser";
 import { EditUser } from "./api/EditUser";
+import { USerFetch } from "./query/USerFetch";
 
 function App() {
   var title = "React App";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/apidemo2" element ={<ApiDemo2/>}></Route>
         <Route path = "/listuser" element={<ListUser/>}></Route>
         <Route path = "/edituser/:id" element={<EditUser/>}></Route>
+        <Route path="/query/user" element={<USerFetch/>}></Route>
         {/* <Route path ="/employees/contactus" element={<ContactUs/>}></Route> */}
         <Route path="/employees/contactus/:id" element={<ContactUs />}></Route>
       </Routes>

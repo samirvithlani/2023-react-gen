@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import { Log } from "../api/Log";
 import { StorageDemo } from "../storage/StorageDemo"
 
 
@@ -20,7 +21,7 @@ const useAuth = () =>{
 
 const ProtectedRoutes  = ()=>{
 
-    return useAuth() ? <Outlet/> : <h1>NOT FOUND....</h1>
+    return useAuth() ? <Outlet/> : <Log/>
     //useAuth ?<Outlet/> : login Component
 
 }
