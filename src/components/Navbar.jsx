@@ -57,7 +57,13 @@ export const Navbar = () => {
                 user query
               </Link>
             </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/query/user/add">
+                user query add
+              </Link>
+            </li>
             
+
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
