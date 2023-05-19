@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../context/context";
 
 export const Navbar = () => {
+  var title = useContext(AppContext)
+  console.log(title) //undefined....
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -62,7 +65,11 @@ export const Navbar = () => {
                 user query add
               </Link>
             </li>
-            
+            <li class="nav-item">
+              <Link class="nav-link" to="/products">
+                PRODUCTS
+              </Link>
+            </li>
 
             <li class="nav-item dropdown">
               <a

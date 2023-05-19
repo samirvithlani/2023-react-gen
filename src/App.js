@@ -21,33 +21,43 @@ import { ListUser } from "./api/ListUser";
 import { EditUser } from "./api/EditUser";
 import { USerFetch } from "./query/USerFetch";
 import { PostUserData } from "./query/PostUserData";
+import { Products } from "./context/Products";
+import { AppContext } from "./context/context";
 
 function App() {
   var title = "React App";
   var payload = "This is a payload";
   return (
     <div className="App">
+      
       <Navbar />
+      
       <br />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
+      <AppContext.Provider value={{ title }}>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
 
-        <Route element={<ProtectedRoutes />}>
-          <Route path="/employees" element={<Employees />}></Route>
-          <Route path="/aboutus" element={<AboutUs />}></Route>
-        </Route>
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/employees" element={<Employees />}></Route>
+            <Route path="/aboutus" element={<AboutUs />}></Route>
+          </Route>
 
-        <Route path="/*" element={<Error />}></Route>
-        <Route path="/store" element={<StorageDemo />}></Route>
-        <Route path="/apidemo1" element ={<ApiDemo1/>}></Route>
-        <Route path="/apidemo2" element ={<ApiDemo2/>}></Route>
-        <Route path = "/listuser" element={<ListUser/>}></Route>
-        <Route path = "/edituser/:id" element={<EditUser/>}></Route>
-        <Route path="/query/user" element={<USerFetch/>}></Route>
-        <Route path="/query/user/add" element={<PostUserData/>}></Route>
-        {/* <Route path ="/employees/contactus" element={<ContactUs/>}></Route> */}
-        <Route path="/employees/contactus/:id" element={<ContactUs />}></Route>
-      </Routes>
+          <Route path="/*" element={<Error />}></Route>
+          <Route path="/store" element={<StorageDemo />}></Route>
+          <Route path="/apidemo1" element={<ApiDemo1 />}></Route>
+          <Route path="/apidemo2" element={<ApiDemo2 />}></Route>
+          <Route path="/listuser" element={<ListUser />}></Route>
+          <Route path="/edituser/:id" element={<EditUser />}></Route>
+          <Route path="/query/user" element={<USerFetch />}></Route>
+          <Route path="/query/user/add" element={<PostUserData />}></Route>
+          <Route path="/products" element={<Products />}></Route>
+          {/* <Route path ="/employees/contactus" element={<ContactUs/>}></Route> */}
+          <Route
+            path="/employees/contactus/:id"
+            element={<ContactUs />}
+          ></Route>
+        </Routes>
+      </AppContext.Provider>
 
       {/* <Content  payload ={payload}/> */}
       {/* <Users/> */}
