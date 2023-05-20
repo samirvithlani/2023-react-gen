@@ -23,6 +23,7 @@ import { USerFetch } from "./query/USerFetch";
 import { PostUserData } from "./query/PostUserData";
 import { Products } from "./context/Products";
 import { AppContext } from "./context/context";
+import { DynamicForm } from "./forms/DynamicForm";
 
 function App() {
   var title = "React App";
@@ -51,6 +52,7 @@ function App() {
           <Route path="/query/user" element={<USerFetch />}></Route>
           <Route path="/query/user/add" element={<PostUserData />}></Route>
           <Route path="/products" element={<Products />}></Route>
+          <Route path ="/dynamicform" element = {<DynamicForm/>}></Route>
           {/* <Route path ="/employees/contactus" element={<ContactUs/>}></Route> */}
           <Route
             path="/employees/contactus/:id"
