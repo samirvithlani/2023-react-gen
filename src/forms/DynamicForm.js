@@ -9,30 +9,73 @@ export const DynamicForm = () => {
       filedName: "name",
       filedType: "text",
       placeholder: "Enter your name",
+      validation: {
+        required: {
+          value: true,
+          message: "Name is required",
+        },
+        minLength: {
+          value: 3,
+          message: "Minimum 3 characters are allowed",
+        }
+      },
     },
     {
       label: "Email",
       filedName: "email",
       filedType: "email",
       placeholder: "Enter your email",
+      validation: {
+        required: {
+          value: true,
+          message: "Email is required",
+        },
+        pattern: {
+          value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+          message: "Invalid email address",
+        },
+      }
     },
     {
       label: "Password",
       filedName: "password",
       filedType: "password",
       placeholder: "Enter your password",
+      validation: {
+        required: {
+          value: true,
+          message: "Password is required",
+        },
+        minLength: {
+          value: 6,
+          message: "Minimum 6 characters are allowed",
+        },
+      }
     },
     {
       label: "color",
       filedName: "color",
       filedType: "color",
+      validation:{
+        required: {
+          value: true,
+          message: "Color is required",
+        },
+      }
     },
+
     {
       label: "Male",
       filedName: "gender",
       filedType: "radio",
       value: "Male",
       name: "gender",
+      validation:{
+        required: {
+          value: true,
+          message:"required"
+        }
+      }
     },
     {
       label: "Female",
@@ -40,6 +83,12 @@ export const DynamicForm = () => {
       filedType: "radio",
       value: "FeMale",
       name: "gender",
+      validation:{
+        required: {
+          value: true,
+          message:"required"
+        }
+      }
     },
     {
       label: "Cricket",
@@ -90,10 +139,15 @@ export const DynamicForm = () => {
     },
   ]);
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit,formState:{errors} } = useForm(
+    {
+      mode:"onSubmit"
+    }
+  );
   const submit = (data) => {
     console.log(data);
   };
+  console.log("error...",errors);
 
   return (
     <div>
@@ -113,9 +167,11 @@ export const DynamicForm = () => {
                   type={form.filedType}
                   placeholder={form.placeholder}
                   value={form?.value}
-                  {...register(form.filedName)}
+                  {...register(form.filedName,form.validation)}
                 />
               )}
+              {errors[form.filedName]?.message}
+              
             </div>
           );
         })}
