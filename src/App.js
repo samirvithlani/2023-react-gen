@@ -27,6 +27,7 @@ import { DynamicForm } from "./forms/DynamicForm";
 import { Sidebar } from "./employeemang/Sidebar";
 import { Helmet } from "react-helmet";
 import { ButtonDemo } from "./mui/ButtonDemo";
+import { MuiTable } from "./mui/MuiTable";
 
 function App() {
   var title = "React App";
@@ -84,6 +85,7 @@ function App() {
               <Route path="/" element={<Content />}></Route>
               <Route path="/home" element={<Home />}></Route>
               <Route path ="/muibutton" element={<ButtonDemo></ButtonDemo>}></Route>
+              <Route path ="/muitable" element={<MuiTable/>}></Route>
 
               <Route element={<ProtectedRoutes />}>
                 <Route path="/employees" element={<Employees />}></Route>
